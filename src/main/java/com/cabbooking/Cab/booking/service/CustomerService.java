@@ -26,4 +26,8 @@ public class CustomerService {
            }
            return "Authentication failed";
     }
+
+    public Customer getCustomerById(int customerId){
+        return customerRepository.findById(customerId);
+    }
 }

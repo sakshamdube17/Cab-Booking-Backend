@@ -1,5 +1,6 @@
 package com.cabbooking.Cab.booking.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.yaml.snakeyaml.events.Event;
@@ -13,12 +14,16 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
+    @JsonIgnore
     @ManyToOne
-    Customer customer;
-    int billAmount;
-    String status;
-    String feedback;
+    private Customer customer;
+    private int billAmount;
+    private String status;
+    private String feedback;
+    @JsonIgnore
     @ManyToOne
-    Driver driver;
+    private Driver driver;
+    private String startingPoint;
+    private String endingPoint;
 }
